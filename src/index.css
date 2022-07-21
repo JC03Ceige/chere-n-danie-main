@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&family=Julius+Sans+One&family=Literata:opsz,wght@7..72,200;7..72,300;7..72,500;7..72,600&family=Splash&family=Square+Peg&display=swap");
+
+/* :root {
+  --lightGoldenWheat: background-color(#eae9d7);
+  --softPastelClay: background-color(#d9c3b5);
+  --lightTan: background-color(#d8b28e);
+  background-color: #9e8f68;
+  background-color: #a5b577;
+  background-color: #94a11d;
+  background-color: #797d30;
+  background-color: #eb682e;
+  background-color: #d6ad3f;
+  background-color: #ffc54e;
+  background-color: #850e47;
+  background-color: #f1e4dcb2;
+} */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1e4dcb2;
+  overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #850e47;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  font-family: "Belista", cursive;
+  text-decoration: none !important;
+  margin: 0 1em;
+  color: #eae9d7d7 !important;
+  text-shadow: 1px 1px 3px #2d050f, 2px 2px 5px #896e74;
+}
+
+a:hover {
+  text-decoration: underline !important;
+  color: #e50462e7 !important;
+}
+
+.navBar a {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 1em;
+}
+
+.genericHeadings {
+  font-family: "Boheme Floral", serif;
+  font-size: 6rem !important;
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 5px #4e4540;
+}
+
+.plainText {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 1.25em !important;
+}
+
+.navBar {
+  position: fixed;
+  margin: 0 !important;
+  padding: 4px;
+  top: 0;
+  width: 100vw;
+  background-color: #42032179;
+  z-index: 1;
+}
+
+.names {
+  font-family: "Babylonica", cursive;
+  font-size: 3em;
+  font-weight: 500;
+  color: var(--lightGoldenWheat);
+}
+
+.header {
+  background-color: #d9c3b5a2;
+  width: 100vw;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.headerImg {
+  width: 100vw;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.heading {
+  color: #fffddf;
+  text-shadow: 1px 1px 3px #2d050f, 2px 2px 5px #896e74;
+  position: absolute;
+  bottom: 2rem;
+  margin: 0 2rem !important;
+  font-family: "Belista", sans-serif;
+  font-size: 4em;
+  letter-spacing: 0.25em;
+  text-align: center;
+  z-index: 2;
+}
+
+.info {
+  background-color: #f1e4dccc !important;
+  display: block;
+  position: relative;
+  width: 100vw !important;
+  opacity: 0.75;
+}
+
+.infoCard {
+  background-color: #fffef2b3 !important;
+  padding: 4rem 0 !important;
+  width: 100%;
+}
+
+.cardDetails {
+  padding: 4rem 0 !important;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wnrDetails {
+  padding: 4rem 0 !important;
+  position: absolute;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.proteas {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: fill !important;
+}
+
+.cardImg {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  width: 100%;
+}
+
+.countdown {
+  width: 60% !important;
+  text-align: right;
+  padding: 1em !important;
+  margin: 1em auto;
+  font-size: large;
+  font-family: "Julius Sans One", sans-serif;
+}
+
+.waarSer {
+  position: relative;
+  margin: 0 !important;
+  padding: 4rem 0 !important;
+  background-color: #a7aa75b2;
+}
+
+.waarSer .plainText {
+  color: whitesmoke;
+}
+
+.datum {
+  position: relative;
+  width: 100vw;
+  margin: 2rem 0 !important;
+  padding: 2rem 0 !important;
+  background-color: #d9c3b599;
+  /*background: url("./assets/protea-agtergron.png") !important;
+  background-size: 250vh !important;*/
+}
+
+.kaart {
+  margin: auto;
+  padding: 2rem !important;
+  background-color: #dfd7d14a !important;
+  border: solid 0.5px slategray !important;
+  border-radius: 10px;
+  height: 50vh;
+}
+
+.kaartTitle {
+  font-family: "Literata", serif;
+  text-align: left;
+  color: olive;
+  text-shadow: 1px 1px 3px #553645b6;
+}
+
+.kaartText {
+  font-family: "Literata", serif;
+  text-align: left;
+  color: olive;
+  text-shadow: 1px 1px 3px #553645b6;
+}
+
+.ontmoeting {
+  color: #37061e;
+  margin: auto;
+  padding: 4rem 0 !important;
+  text-align: center;
+}
+
+.ontmoetingHead {
+  font-family: "Boheme Floral";
+  font-size: 5em;
+  margin: 3rem auto;
+  text-shadow: 1px 1px 1px #ffffffb6, 2px 2px 6px #3b050592;
+}
+
+.modalForm {
+  font-family: "Julius Sans One", sans-serif;
+}
+
+.title {
+  font-family: "Literata", serif;
+}
+
+.input-header {
+  font-family: "Julius Sans One", sans-serif;
+}
+
+.card {
+  font-family: "Julius Sans One", sans-serif;
+}
+
+#formGridCheckbox {
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.form-headings {
+  font-family: "Belista", sans-serif;
+  font-size: 2.5em !important;
+  color: #eae9d7;
+  text-shadow: 1px 1px 3px #2d050f, 2px 2px 5px #896e74;
+}
+
+.rsvp {
+  background-color: #850e47;
+}
+
+.rsvpHead {
+  font-family: "Boheme Floral";
+  font-size: 5em;
+  margin: 3rem auto;
+  color: #eae9d7;
+  text-shadow: 1px 1px 3px #2d050f, 2px 2px 5px #896e74;
+}
+
+.rsvpForm {
+  margin: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: #dfd7d14a !important;
+  border-radius: 10px;
+}
+
+.rsvpBtn {
+  font-family: "Literata", serif;
+  padding: 2em;
+  border: 0.5px solid #37061e !important;
+}
+
+.rsvpBtn:hover {
+  font-family: "Literata", serif;
+  padding: 2em;
+  border: 1px solid #37061e !important;
+  outline: 5px solid #dc1977cc !important;
+}
+
+.weer-heading {
+  font-family: "Boheme Floral", sans-serif !important;
+  font-size: 5em !important;
+  margin: 3rem auto;
+  color: #eae9d7;
+  text-shadow: 1px 1px 1px #ffffffb6, 2px 2px 6px #3b050592;
+}
+
+.weerBtn {
+  font-family: "Belista", serif;
+  padding: 2em;
+  border: 0.5px solid #37061e !important;
+}
+
+.algemeen {
+  background-color: rgb(0, 65, 88);
+}
+
+.additioneelHead {
+  font-family: "Boheme Floral", sans-serif !important;
+  font-size: 5em !important;
+  margin: 3rem auto;
+  color: #eae9d7;
+  text-shadow: 1px 1px 1px #ffffffb6, 2px 2px 6px #3b050592;
+}
+
+.algemeenText {
+  color: #eae9d7;
+}
+
+.footer {
+  width: 100%;
+  color: #eae9d7;
+  position: fixed;
+  font-family: "Julius Sans One", sans-serif;
+  letter-spacing: 0.5em;
+  bottom: 0;
+}
+
+.footerImg {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
