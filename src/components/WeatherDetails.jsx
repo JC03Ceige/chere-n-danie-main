@@ -17,7 +17,7 @@ const WeatherDetails = ({ data }) => {
     <div>
       {/* The card component is use to the weather data that has been retrieved. */}
       <Card
-        className="card"
+        className="cardWeather"
         style={{
           width: "18rem",
           backgroundColor: "rgba(215, 235, 235, 0.5)",
@@ -45,15 +45,15 @@ const WeatherDetails = ({ data }) => {
         {/* The ListGroup component lists weather items inside the card. */}
         <ListGroup className="list-group-flush">
           <ListGroup.Item className="list-item">
-            <span className="list-content">Feels Like:</span>{" "}
+            <span className="list-content">Voel Soos:</span>{" "}
             {Math.floor(data.main.feels_like - 273.15)}
           </ListGroup.Item>
           <ListGroup.Item className="list-item">
-            <span className="list-content">Humidity:</span>{" "}
+            <span className="list-content">Humiditeit:</span>{" "}
             {Math.floor(data.main.humidity)}
           </ListGroup.Item>
           <ListGroup.Item className="list-item">
-            <span className="list-content">Wind Speed:</span> {data.wind.speed}{" "}
+            <span className="list-content">Wind Spoed:</span> {data.wind.speed}{" "}
             km/h
           </ListGroup.Item>
           <ListGroup.Item className="list-item">
@@ -65,12 +65,12 @@ const WeatherDetails = ({ data }) => {
             {Math.floor(data.main.temp_min - 273.15)}
           </ListGroup.Item>
           <ListGroup.Item className="list-item">
-            <span className="list-content">Sunrise:</span>{" "}
+            <span className="list-content">Son Opkoms:</span>{" "}
             {/* Time needs to be converted from seconds. */}
             {new Date(data.sys.sunset * 1000).toLocaleTimeString()}
           </ListGroup.Item>
           <ListGroup.Item className="list-item">
-            <span className="list-content">Sunset:</span>{" "}
+            <span className="list-content">Sonsondergang:</span>{" "}
             {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
           </ListGroup.Item>
         </ListGroup>

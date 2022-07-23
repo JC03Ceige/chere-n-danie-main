@@ -10,14 +10,11 @@ const MainView = () => {
   return (
     <div>
       <Container fluid>
-      <NavBar />
-      <Header />
-
-      {/* Logo body wrapped in div */}
-     
-      <div className="infoCard">
-        <InfoCard />
-      </div>
+        <NavBar />
+        <Header />
+        <div className="infoCard">
+          <InfoCard />
+        </div>
       </Container>
     </div>
   );

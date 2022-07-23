@@ -4,14 +4,11 @@ import emailjs from "@emailjs/browser";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
-import Modal from "react-bootstrap/Modal";
+import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import ModalHeader from "react-bootstrap/ModalHeader";
-import ModalTitle from "react-bootstrap/ModalTitle";
 
 import WeatherWidget from "./WeatherWidget";
 
@@ -20,7 +17,23 @@ import Venster from "../assets/venster-wag-bnr.jpeg";
 import Klipsit from "../assets/klip-sit.jpeg";
 import Kaart from "../assets/mapimage_church.png";
 import KaartCD from "../assets/mapimage_church_venue.png";
-import Footer from "../assets/silhouette.jpeg";
+import Kleure from "../assets/kleur_pallet.png";
+import A from "../assets/gallery/1.jpeg";
+import B from "../assets/gallery/2.jpeg";
+import C from "../assets/gallery/3.jpeg";
+import D from "../assets/gallery/4.jpeg";
+import E from "../assets/gallery/5.jpeg";
+import F from "../assets/gallery/6.jpeg";
+import G from "../assets/gallery/7.jpeg";
+import H from "../assets/gallery/8.jpeg";
+import I from "../assets/gallery/9.jpeg";
+import J from "../assets/gallery/10.jpeg";
+import K from "../assets/gallery/11.jpeg";
+import L from "../assets/gallery/12.jpeg";
+import M from "../assets/gallery/13.jpeg";
+import N from "../assets/gallery/14.jpeg";
+import O from "../assets/gallery/15.jpeg";
+import P from "../assets/gallery/16.jpeg";
 
 const InfoCard = () => {
   let today = new Date(); // Declaring variable for today's date.
@@ -33,22 +46,7 @@ const InfoCard = () => {
   let daysLeft = Math.ceil((trouDatum.getTime() - today.getTime()) / convDay);
 
   const [checked, setChecked] = useState(false);
-
-  const [rsvpData, setRsvpData] = useState({
-    from_name: "",
-    from_surname: "",
-    guest_email: "",
-    metgesel_yes: "Ja",
-    metgesel_no: "Nee",
-    to_confirm: "Sal Bevestig",
-    metgesel_name: "",
-    metgesel_surname: "",
-    none: "Geen",
-    diabetic: "Diabeet",
-    lactose_intolerant: "Laktoos Onverdraagsaam",
-    vegatarian: "Vegertarier",
-    other: "",
-  });
+  const [gallery, setGallery] = useState(false);
 
   const form = useRef();
 
@@ -113,7 +111,12 @@ const InfoCard = () => {
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Seremonie</h1>
                 <br />
-                <a href="">
+                <a
+                  href={
+                    "https://www.google.com/maps/d/u/0/edit?mid=1VZaiboN7lGk89dEXvs0p02sEGSJA1nc&usp=sharing"
+                  }
+                  target="_blank"
+                >
                   <p className="plainText">
                     {" "}
                     vind plaas in die Gamka-Oos kerk
@@ -130,7 +133,12 @@ const InfoCard = () => {
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Onthaal</h1>
                 <br />
-                <a href="">
+                <a
+                  href={
+                    "https://www.google.com/maps/d/u/0/edit?mid=1VZaiboN7lGk89dEXvs0p02sEGSJA1nc&usp=sharing"
+                  }
+                  target="_blank"
+                >
                   <p className="plainText">
                     {" "}
                     vind plaas op Boeteka plaas
@@ -212,7 +220,7 @@ const InfoCard = () => {
         <br />
 
         <hr />
-        <Row className="rsvp">
+        <Row className="rsvp" id="rsvp">
           <Col className="m-auto align-self-center" sm="6" xs="6">
             <div className="rsvpForm">
               <h1 className="rsvpHead">RSVP</h1>
@@ -392,7 +400,12 @@ const InfoCard = () => {
               <hr className="logo" />
               <br />
               <h1 className="additioneelHead">Drag:</h1>
-              <p className="algemeenText"> Semi formeel (natuurlike Kleure)</p>
+              <p className="algemeenText">
+                {" "}
+                Semi formeel (Neutrale Kleure). Hieronder is 'n paar verwysings:
+              </p>
+
+              <Image src={Kleure} />
             </Col>
           </Row>
           <Row>
@@ -437,7 +450,139 @@ const InfoCard = () => {
           </Row>
         </Row>
         <Row>
-          <Image src={Footer} />
+          <Button
+            variant="light"
+            className="form-headings m-2"
+            onClick={() => setGallery(toggle)}
+          >
+            Foto Gallery
+          </Button>
+          {gallery && (
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={J}
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3 className="additioneelHead">1ste Ontmoeting</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={I}
+                  alt="Second slide"
+                />
+
+                <Carousel.Caption>
+                  <h3 className="additioneelHead">2de Date</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={A}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={B}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={C}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={D}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={E}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={F}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={G}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={H}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={K}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={L}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={N}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={O}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={P}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 fluid rounded gallery"
+                  src={M}
+                  alt="Third slide"
+                />
+                <Carousel.Caption>
+                  <h3>Toe sê ek ja!</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+          )}
         </Row>
       </Container>
     </div>
