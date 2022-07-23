@@ -18,6 +18,7 @@ import Klipsit from "../assets/klip-sit.jpeg";
 import Kaart from "../assets/mapimage_church.png";
 import KaartCD from "../assets/mapimage_church_venue.png";
 import Kleure from "../assets/kleur_pallet.png";
+import Silhouette from "../assets/silhouette.jpeg";
 import A from "../assets/gallery/1.jpeg";
 import B from "../assets/gallery/2.jpeg";
 import C from "../assets/gallery/3.jpeg";
@@ -583,6 +584,11 @@ const InfoCard = () => {
               </Carousel.Item>
             </Carousel>
           )}
+        </Row>
+        <Row>
+          <hr />
+          <Image src={Silhouette} alt="The last HOR-RAH!!" fluid />
+          <hr />{" "}
         </Row>
       </Container>
     </div>
