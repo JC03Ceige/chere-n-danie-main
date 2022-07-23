@@ -2,10 +2,10 @@
 
 @font-face {
   font-family: "Belista";
-  src: url("../src/assets/fonts/Belista.ttf") format("ttf");
+  src: url("../src/assets/fonts/Belista.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Boheme Floral";
-  src: url("../src/assets/fonts/Boheme\ Floral.ttf") format("ttf");
+  src: url("../src/assets/fonts/Boheme\ Floral.ttf") format("truetype");
 }
