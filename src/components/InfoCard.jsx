@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -31,10 +32,52 @@ const InfoCard = () => {
   const convDay = 1000 * 60 * 60 * 24; // Variable that divides milliseconds to convert it to days.
   let daysLeft = Math.ceil((trouDatum.getTime() - today.getTime()) / convDay);
 
-  const [show, setShow] = useState(false);
+  const [checked, setChecked] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [rsvpData, setRsvpData] = useState({
+    from_name: "",
+    from_surname: "",
+    guest_email: "",
+    metgesel_yes: "Ja",
+    metgesel_no: "Nee",
+    to_confirm: "Sal Bevestig",
+    metgesel_name: "",
+    metgesel_surname: "",
+    none: "Geen",
+    diabetic: "Diabeet",
+    lactose_intolerant: "Laktoos Onverdraagsaam",
+    vegatarian: "Vegertarier",
+    other: "",
+  });
+
+  const form = useRef();
+
+  function toggle(value) {
+    return !value;
+  }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "contact_service",
+        "rsvp_form",
+        form.current,
+        "vChehXxV_jv69rJm0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("RSVP is gestuur! Sien jou op ons groot dag!");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    form.current.reset();
+  };
 
   return (
     <div>
@@ -139,7 +182,7 @@ const InfoCard = () => {
           <p className="plainText">
             Op 10 Maart 2018 (Danie se verjaarsdag) het hulle mekaar op Facebook
             raak ge-scroll en dadelik begin kennis maak en gesels. Vinnig het
-            hulle besef daar is ’n sterk konneksie en het dit Cheré se wilskrag
+            hulle besef daar is ’n sterk konneksie en het dit Chére se wilskrag
             geverg om haar nommer vir Danie te stuur wat volg met die boodskap
             “As jy sou wou…”
           </p>
@@ -149,18 +192,18 @@ const InfoCard = () => {
             hulle sê: Die res is geskiedenis!
           </p>
           <p className="plainText">
-            Die ooreenkoms was dat wanneer dit die dag 60mm reën dan sal Danie
-            vir Cheré vra om te trou. 2021 was ’n besonderse reënval jaar in die
+            Die ooreenkoms was dat wanneer dit die dag 50mm reën dan sal Danie
+            vir Chére vra om te trou. 2021 was ’n besonderse reënval jaar in die
             Karoo en was daar menigte geleenthede om die groot vraag te vra.
           </p>
           <p className="plainText">
             Uiteindelik op 13 November 2021 breek die groot dag aan. Dit was nou
-            nie direk na die 60mm reen nie, maar wel toe jy die 60mm reën se
-            effek op die veld kon sien. Cheré word mislei met die idee dat hulle
+            nie direk na die 50mm reen nie, maar wel toe jy die 50mm reën se
+            effek op die veld kon sien. Chére word mislei met die idee dat hulle
             die Saterdag oggend moet dorp toe vir boerdery doeleindes, maar
             hulle het toe nooit in die dorp uitgekom nie. Hulle eindig wel op
             iewers op die plaas waar jy weid en ver kon sien hoe God die Karoo
-            geseën het. Danie sak toe af op een knie en Cheré beantwoord sy
+            geseën het. Danie sak toe af op een knie en Chére beantwoord sy
             langverwagte vraag met baie trane en min woorde.
           </p>
         </Row>
@@ -174,61 +217,155 @@ const InfoCard = () => {
             <div className="rsvpForm">
               <h1 className="rsvpHead">RSVP</h1>
 
-              <Form>
+              <Form ref={form}>
                 <Row className="m-3 p-3">
-                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Group as={Col} controlId="formGridName">
                     <Form.Label className="form-headings m-2">Naam:</Form.Label>
-                    <Form.Control type="text" placeholder="Vul asb u Naam in" />
+                    <Form.Control
+                      name="from_name"
+                      //value={rsvpData.from_name}
+                      type="text"
+                      placeholder="Vul asb u Naam in"
+                      // onChange={(event) => handleInputChange(event)}
+                    />
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Group as={Col} controlId="formGridSurname">
                     <Form.Label className="form-headings m-2">Van:</Form.Label>
-                    <Form.Control type="text" placeholder="Vul asb u Van in" />
+                    <Form.Control
+                      name="from_surname"
+                      //value={rsvpData.from_surname}
+                      type="text"
+                      placeholder="Vul asb u Van in"
+                      // onChange={(event) => handleInputChange(event)}
+                    />
+                  </Form.Group>
+                </Row>
+                <Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label className="form-headings m-2">
+                      E-pos:
+                    </Form.Label>
+                    <Form.Control
+                      name="guest_email"
+                      //value={rsvpData.guest_email}
+                      type="email"
+                      placeholder="U Epos adres"
+                      // onChange={(event) => handleInputChange(event)}
+                    />
                   </Form.Group>
                 </Row>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="formGridPlusOne">
                   <Form.Label as="legend" className="form-headings m-2">
                     Sluit u uitnodiging 'n metgesel in?
                   </Form.Label>
                   <Form.Check
                     inline
                     type="radio"
+                    //defaultValue={rsvpData.metgesel_yes}
                     label="Ja"
-                    name="formHorizontalRadios"
+                    name="metgesel_yes"
                     id="formHorizontalRadios1"
+                    checked={checked}
+                    onChange={() => setChecked(toggle)}
                   />
                   <Form.Check
                     inline
                     type="radio"
+                    //defauletValue={rsvpData.metgesel_no}
                     label="Nee"
-                    name="formHorizontalRadios"
+                    name="metgesel_yes"
                     id="formHorizontalRadios2"
+                    onChange={() => setChecked(false)}
                   />
                   <Form.Check
                     inline
                     type="radio"
+                    //defaultValue={rsvpData.to_confirm}
                     label="Sal bevestig"
-                    name="formHorizontalRadios"
+                    name="metgesel_yes"
                     id="formHorizontalRadios3"
+                    onChange={() => setChecked(false)}
                   />
                 </Form.Group>
 
+                {checked && (
+                  <Row className="m-3 p-3">
+                    <Form.Group as={Col} controlId="formGridName">
+                      <Form.Label className="form-headings m-2">
+                        Naam:
+                      </Form.Label>
+                      <Form.Control
+                        name="metgesel_name"
+                        //value={rsvpData.from_name}
+                        type="text"
+                        placeholder="Vul asb u Naam in"
+                        // onChange={(event) => handleInputChange(event)}
+                      />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGridSurname">
+                      <Form.Label className="form-headings m-2">
+                        Van:
+                      </Form.Label>
+                      <Form.Control
+                        name="metgesel_surname"
+                        //value={rsvpData.from_surname}
+                        type="text"
+                        placeholder="Vul asb u Van in"
+                        // onChange={(event) => handleInputChange(event)}
+                      />
+                    </Form.Group>
+                  </Row>
+                )}
                 <Form.Group className="mb-3" id="formGridCheckbox">
                   <Form.Label className="form-headings m-2">
                     Spyseniering:
                   </Form.Label>
-                  <Form.Check type="checkbox" label="Diabeet" />
-                  <Form.Check type="checkbox" label="Laktose Onverdraagsaam" />
-                  <Form.Check type="checkbox" label="Vegetarier" />
-                  <Form.Check type="checkbox" label="Ander" />
-                  <Form.Control placeholder="Spesifiseer asb hier." />
+                  <Form.Check
+                    type="checkbox"
+                    name="none"
+                    //defaultValue={rsvpData.none}
+                    label="Geen"
+                    // onChange={(event) => handleInputChange(event)}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    name="diabetic"
+                    //defaultValue={rsvpData.diabetic}
+                    label="Diabeet"
+                    // onChange={(event) => handleInputChange(event)}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    name="lactose_intolerant"
+                    //defaultValue={rsvpData.lactose_intolerant}
+                    label="Laktose Onverdraagsaam"
+                    // onChange={(event) => handleInputChange(event)}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    name="vegatarian"
+                    //defaultValue={rsvpData.vegatarian}
+                    label="Vegetarier"
+                    // onChange={(event) => handleInputChange(event)}
+                  />
+                  <Form.Check type="checkbox" name="other" label="Ander:" />
+                  <Form.Control
+                    type="text"
+                    name="other"
+                    //value={rsvpData.other}
+                    placeholder="Spesifiseer asb hier."
+                    // onChange={(event) => handleInputChange(event)}
+                  />
                 </Form.Group>
 
                 <Button
                   variant="light"
                   type="submit"
                   className="form-headings m-2"
+                  onClick={(event) => sendEmail(event)}
                 >
                   Dien-In
                 </Button>
