@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&family=Julius+Sans+One&family=Literata:opsz,wght@7..72,200;7..72,300;7..72,500;7..72,600&family=Splash&family=Square+Peg&display=swap");
+
+@font-face {
+  font-family: "Belista";
+  src: url("../src/assets/fonts/Belista.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Boheme Floral";
+  src: url("../src/assets/fonts/Boheme\ Floral.ttf") format("ttf");
+}
