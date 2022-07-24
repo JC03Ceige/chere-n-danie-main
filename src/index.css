@@ -210,12 +210,14 @@ a:hover {
 }
 
 .kaart {
-  margin: auto;
-  padding: 2rem !important;
+  margin: 0 !important;
+  padding: 1rem !important;
   background-color: #dfd7d14a !important;
   border: solid 0.5px slategray !important;
   border-radius: 10px;
   height: 50vh;
+  justify-self: center;
+  align-self: center;
 }
 
 .kaartTitle {
@@ -366,8 +368,8 @@ button:hover {
 
 img.gallery {
   margin: 2rem auto !important;
-  height: 30vh !important;
-  width: 35vw !important;
+  height: 60vh !important;
+  width: 70vw !important;
 }
 
 @media (min-width: 600px) {

@@ -108,7 +108,7 @@ const InfoCard = () => {
         </Row>
         <Row className="waarSer">
           <Row>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm="10" xs="10" lg="6">
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Seremonie</h1>
                 <br />
@@ -130,7 +130,7 @@ const InfoCard = () => {
                 </a>
               </div>
             </Col>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm="10" xs="10" lg="6">
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Onthaal</h1>
                 <br />
@@ -154,7 +154,7 @@ const InfoCard = () => {
             </Col>
           </Row>
           <Row>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm="10" xs="10" lg="6">
               <div className="cardDetails">
                 <Image
                   fluid
@@ -164,7 +164,7 @@ const InfoCard = () => {
                 />
               </div>
             </Col>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm="10" xs="10" lg="6">
               <div className="cardDetails">
                 <Image
                   fluid
@@ -222,13 +222,13 @@ const InfoCard = () => {
 
         <hr />
         <Row className="rsvp" id="rsvp">
-          <Col className="m-auto align-self-center" sm="10" xs="10">
+          <Col className="m-auto align-self-center" sm="8" xs="8">
             <div className="rsvpForm">
               <h1 className="rsvpHead">RSVP</h1>
 
               <Form ref={form}>
                 <Row className="m-3 p-3">
-                  <Form.Group as={Col} controlId="formGridName" sm={10}>
+                  <Form.Group as={Col} controlId="formGridName" sm={10} lg="6">
                     <Form.Label className="form-headings m-2">Naam:</Form.Label>
                     <Form.Control
                       name="from_name"
@@ -239,7 +239,12 @@ const InfoCard = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridSurname" sm={10}>
+                  <Form.Group
+                    as={Col}
+                    controlId="formGridSurname"
+                    sm={10}
+                    lg="6"
+                  >
                     <Form.Label className="form-headings m-2">Van:</Form.Label>
                     <Form.Control
                       name="from_surname"
@@ -251,7 +256,7 @@ const InfoCard = () => {
                   </Form.Group>
                 </Row>
                 <Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Group as={Col} controlId="formGridEmail" lg="12">
                     <Form.Label className="form-headings m-2">
                       E-pos:
                     </Form.Label>
@@ -301,7 +306,12 @@ const InfoCard = () => {
 
                 {checked && (
                   <Row className="m-3 p-3">
-                    <Form.Group as={Col} controlId="formGridName" sm={10}>
+                    <Form.Group
+                      as={Col}
+                      controlId="formGridName"
+                      sm={10}
+                      lg="6"
+                    >
                       <Form.Label className="form-headings m-2">
                         Naam:
                       </Form.Label>
@@ -314,7 +324,12 @@ const InfoCard = () => {
                       />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridSurname" sm={10}>
+                    <Form.Group
+                      as={Col}
+                      controlId="formGridSurname"
+                      sm={10}
+                      lg="6"
+                    >
                       <Form.Label className="form-headings m-2">
                         Van:
                       </Form.Label>
@@ -394,10 +409,10 @@ const InfoCard = () => {
         <hr />
         <Row className="algemeen">
           <Row>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               <WeatherWidget />
             </Col>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               <hr className="logo" />
               <br />
               <h1 className="additioneelHead">Drag:</h1>
@@ -410,7 +425,7 @@ const InfoCard = () => {
             </Col>
           </Row>
           <Row>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               <h1 className="additioneelHead">Kleinspan:</h1>{" "}
               <p className="algemeenText">
                 Om al ons gaste toe te laat om te ontspan en hulself te geniet,
@@ -420,7 +435,7 @@ const InfoCard = () => {
                 direk.
               </p>
             </Col>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               <h1 className="additioneelHead">Metgeselle:</h1>{" "}
               <p className="algemeenText">
                 So graag soos wat ons die groot dag met almal wil spandeer is
@@ -430,7 +445,7 @@ const InfoCard = () => {
             </Col>
           </Row>
           <Row>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               <h1 className="additioneelHead">Kontant kroeg:</h1>
               <p className="algemeenText">
                 Wyn sal voorsien word saam met die spyse, so los maar die
@@ -438,7 +453,7 @@ const InfoCard = () => {
                 met kaart fasiliteite
               </p>{" "}
             </Col>
-            <Col className="" sm={10} xs="10">
+            <Col className="" sm={10} xs="10" lg="6">
               {" "}
               <h1 className="additioneelHead">Geskenke Lys:</h1>
               <p className="algemeenText">
