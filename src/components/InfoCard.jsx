@@ -122,7 +122,7 @@ const InfoCard = () => {
                     {" "}
                     vind plaas in die Gamka-Oos kerk
                     <br />
-                    te Beaufort Wes. Dit begin
+                    in Beaufort Wes. Dit begin
                     <br />
                     <br />
                     <b>stiptelik om 15:00</b>.
@@ -183,7 +183,7 @@ const InfoCard = () => {
         </Row>
 
         <Row className="ontmoeting">
-          <h1 className="ontmoetingHead">Die Ontmoeting</h1>{" "}
+          <h1 className="ontmoetingHead sm-display-5">Die Ontmoeting</h1>{" "}
           <p className="plainText">
             Dit het alles begin met ’n Facebook boodskap wat sê “As jy sou
             wou….”
@@ -207,7 +207,7 @@ const InfoCard = () => {
           </p>
           <p className="plainText">
             Uiteindelik op 13 November 2021 breek die groot dag aan. Dit was nou
-            nie direk na die 50mm reen nie, maar wel toe jy die 50mm reën se
+            nie direk na die 50mm reën nie, maar wel toe jy die 50mm reën se
             effek op die veld kon sien. Chére word mislei met die idee dat hulle
             die Saterdag oggend moet dorp toe vir boerdery doeleindes, maar
             hulle het toe nooit in die dorp uitgekom nie. Hulle eindig wel op
@@ -222,13 +222,13 @@ const InfoCard = () => {
 
         <hr />
         <Row className="rsvp" id="rsvp">
-          <Col className="m-auto align-self-center" sm="6" xs="6">
+          <Col className="m-auto align-self-center" sm="10" xs="10">
             <div className="rsvpForm">
               <h1 className="rsvpHead">RSVP</h1>
 
               <Form ref={form}>
                 <Row className="m-3 p-3">
-                  <Form.Group as={Col} controlId="formGridName">
+                  <Form.Group as={Col} controlId="formGridName" sm={10}>
                     <Form.Label className="form-headings m-2">Naam:</Form.Label>
                     <Form.Control
                       name="from_name"
@@ -239,7 +239,7 @@ const InfoCard = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridSurname">
+                  <Form.Group as={Col} controlId="formGridSurname" sm={10}>
                     <Form.Label className="form-headings m-2">Van:</Form.Label>
                     <Form.Control
                       name="from_surname"
@@ -301,7 +301,7 @@ const InfoCard = () => {
 
                 {checked && (
                   <Row className="m-3 p-3">
-                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Group as={Col} controlId="formGridName" sm={10}>
                       <Form.Label className="form-headings m-2">
                         Naam:
                       </Form.Label>
@@ -314,7 +314,7 @@ const InfoCard = () => {
                       />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridSurname">
+                    <Form.Group as={Col} controlId="formGridSurname" sm={10}>
                       <Form.Label className="form-headings m-2">
                         Van:
                       </Form.Label>
@@ -373,7 +373,7 @@ const InfoCard = () => {
                 <Button
                   variant="light"
                   type="submit"
-                  className="form-headings m-2"
+                  className="m-2 weerBtn"
                   onClick={(event) => sendEmail(event)}
                 >
                   Dien-In
@@ -394,10 +394,10 @@ const InfoCard = () => {
         <hr />
         <Row className="algemeen">
           <Row>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               <WeatherWidget />
             </Col>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               <hr className="logo" />
               <br />
               <h1 className="additioneelHead">Drag:</h1>
@@ -406,11 +406,11 @@ const InfoCard = () => {
                 Semi formeel (Neutrale Kleure). Hieronder is 'n paar verwysings:
               </p>
 
-              <Image src={Kleure} />
+              <Image src={Kleure} fluid />
             </Col>
           </Row>
           <Row>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               <h1 className="additioneelHead">Kleinspan:</h1>{" "}
               <p className="algemeenText">
                 Om al ons gaste toe te laat om te ontspan en hulself te geniet,
@@ -420,7 +420,7 @@ const InfoCard = () => {
                 direk.
               </p>
             </Col>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               <h1 className="additioneelHead">Metgeselle:</h1>{" "}
               <p className="algemeenText">
                 So graag soos wat ons die groot dag met almal wil spandeer is
@@ -430,7 +430,7 @@ const InfoCard = () => {
             </Col>
           </Row>
           <Row>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               <h1 className="additioneelHead">Kontant kroeg:</h1>
               <p className="algemeenText">
                 Wyn sal voorsien word saam met die spyse, so los maar die
@@ -438,7 +438,7 @@ const InfoCard = () => {
                 met kaart fasiliteite
               </p>{" "}
             </Col>
-            <Col className="" sm="6" xs="6">
+            <Col className="" sm={10} xs="10">
               {" "}
               <h1 className="additioneelHead">Geskenke Lys:</h1>
               <p className="algemeenText">
