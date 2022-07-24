@@ -108,7 +108,7 @@ const InfoCard = () => {
         </Row>
         <Row className="waarSer">
           <Row>
-            <Col className="" sm="10" xs="10" lg="6">
+            <Col className="" sm="10" xs="10" lg="5">
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Seremonie</h1>
                 <br />
@@ -130,7 +130,7 @@ const InfoCard = () => {
                 </a>
               </div>
             </Col>
-            <Col className="" sm="10" xs="10" lg="6">
+            <Col className="" sm="10" xs="10" lg="5">
               <div className="cardDetails">
                 <h1 className="genericHeadings display-3">Die Onthaal</h1>
                 <br />
